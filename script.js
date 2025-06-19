@@ -248,7 +248,7 @@ document.getElementById("logout-btn-vote").addEventListener("click", cikisYap);
 document.getElementById("logout-btn-result").addEventListener("click", cikisYap);
 
 
-  downloadExcelBtn.addEventListener("click", () => {
-    window.location.href = `${API_BASE}/api/excel`;
-  });
+     // downloadExcelBtn.addEventListener("click", () => {
+    // window.location.href = `${API_BASE}/api/excel`;
+    // });
 });
