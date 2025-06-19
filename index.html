@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Okul Kıyafetimi Seçiyorum</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="app">
+    <section id="login-section" class="section active">
+      <h2>TC Kimlik No ile Giriş</h2>
+      <input type="text" id="tc-input" placeholder="TC Kimlik No">
+      <button id="login-btn">Giriş Yap</button>
+      <h3>Admin Girişi</h3>
+      <input type="password" id="admin-password" placeholder="Yönetici Şifresi">
+      <button id="admin-login-btn">Admin Girişi</button>
+      <div id="populer-secimler" style="margin-top: 20px; font-size: 16px; color: #555;">
+        <h3>En Çok Tercih Edilenler</h3>
+        <p><strong>Tişört Modeli:</strong> <span id="populer-model">Yükleniyor...</span></p>
+        <p><strong>Tişört Rengi:</strong> <span id="populer-renk">Yükleniyor...</span></p>
+        <p><strong>Pantolon Rengi:</strong> <span id="populer-pantolon">Yükleniyor...</span></p>
+      </div>
+    </section>
+    <!-- Oy verme bölümüne çıkış butonu -->
+   <section id="vote-section" class="section hidden">
+      <h2>Okul Kıyafetimi Seçiyorum</h2>
+  
+       <button id="logout-btn-vote" class="logout-btn">Çıkış Yap</button>
+  
+      <div class="category" id="model-options">
+     <h3>Tişört Modeli</h3>
+     <label class="img-radio" data-value="Bisiklet Yaka">
+      <img src="images/bisiklet.png" alt="Bisiklet Yaka" />
+      <span>Bisiklet Yaka</span>
+      <input type="radio" name="model" value="Bisiklet Yaka" />
+     </label>
+     <label class="img-radio" data-value="Polo Yaka">
+      <img src="images/polo.png" alt="Polo Yaka" />
+      <span>Polo Yaka</span>
+      <input type="radio" name="model" value="Polo Yaka" />
+     </label>
+      </div>
+  
+     <div class="category" id="renk-options">
+     <h3>Tişört Rengi</h3>
+     <label class="img-radio" data-value="Beyaz">
+      <div class="color-box beyaz"></div><span>Beyaz</span>
+      <input type="radio" name="renk" value="Beyaz" />
+     </label>
+     <label class="img-radio" data-value="Siyah">
+      <div class="color-box siyah"></div><span>Siyah</span>
+      <input type="radio" name="renk" value="Siyah" />
+     </label>
+     <label class="img-radio" data-value="Sarı">
+      <div class="color-box sari"></div><span>Sarı</span>
+      <input type="radio" name="renk" value="Sarı" />
+     </label>
+     <label class="img-radio" data-value="Kırmızı">
+      <div class="color-box kirmizi"></div><span>Kırmızı</span>
+      <input type="radio" name="renk" value="Kırmızı" />
+     </label>
+     <label class="img-radio" data-value="Mavi">
+      <div class="color-box mavi"></div><span>Mavi</span>
+      <input type="radio" name="renk" value="Mavi" />
+     </label>
+     <label class="img-radio" data-value="Yeşil">
+      <div class="color-box yesil"></div><span>Yeşil</span>
+      <input type="radio" name="renk" value="Yeşil" />
+     </label>
+     <label class="img-radio" data-value="Turuncu">
+      <div class="color-box turuncu"></div><span>Turuncu</span>
+      <input type="radio" name="renk" value="Turuncu" />
+     </label>
+     <label class="img-radio" data-value="Gri">
+      <div class="color-box gri"></div><span>Gri</span>
+      <input type="radio" name="renk" value="Gri" />
+     </label>
+      </div>
+  
+      <div class="category" id="pantolon-options">
+     <h3>Pantolon Rengi</h3>
+     <label class="img-radio" data-value="Siyah">
+      <div class="color-box siyah"></div><span>Siyah</span>
+      <input type="radio" name="pantolon" value="Siyah" />
+     </label>
+     <label class="img-radio" data-value="Gri">
+      <div class="color-box gri"></div><span>Gri</span>
+      <input type="radio" name="pantolon" value="Gri" />
+     </label>
+     <label class="img-radio" data-value="Füme">
+      <div class="color-box fume"></div><span>Füme</span>
+      <input type="radio" name="pantolon" value="Füme" />
+     </label>
+     </div>
+
+      <button id="submit-btn">Oy Ver</button>
+     </section>
+  </div>
+
+<!-- Sonuçlar kısmına çıkış butonu -->
+<!-- Sonuçlar bölümünde grafikler -->
+<section id="result-section" class="section hidden">
+  <button id="logout-btn-result" class="logout-btn">Çıkış Yap</button>
+  <h2>Anket Sonuçları</h2>
+  
+
+  <div class="chart-row">
+    <div class="chart-box"><canvas id="chartModel"></canvas></div>
+    <div class="chart-box"><canvas id="chartRenk"></canvas></div>
+    <div class="chart-box"><canvas id="chartPantolon"></canvas></div>
+  </div>
+  <!-- Sonuç tablosu -->
+  <div id="sonuc-tablosu" class="table-wrapper"></div>
+
+  <div id="admin-panel" class="hidden">
+    <button id="download-excel">Excel Olarak İndir</button>
+  </div>
+</section>
+
+  <script src="script.js"></script>
+</body>
+</html>

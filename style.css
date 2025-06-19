@@ -1,0 +1,237 @@
+/* Temel sıfırlama */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  color: #333;
+}
+
+#app {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 480px;
+  padding: 30px 25px;
+  margin: 30px auto;
+  box-sizing: border-box;
+}
+
+
+
+h2, h3 {
+  margin-bottom: 18px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1.8px solid #ddd;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  font-weight: 600;
+  padding: 12px 0;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  margin-bottom: 25px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.category {
+  margin-bottom: 25px;
+}
+
+.category h3 {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #34495e;
+}
+
+.category label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+  transform: scale(1.15);
+  vertical-align: middle;
+}
+
+.section.hidden {
+  display: none;
+}
+canvas {
+  width: 100%; /* tam genişlik verelim ama ebeveynine göre */
+  margin: 30px 0;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+
+#admin-panel {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#download-excel {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 520px) {
+  #app {
+    padding: 20px 15px;
+  }
+  button {
+    font-size: 1rem;
+  }
+  h2, h3 {
+    font-size: 1.4rem;
+  }
+}
+/* Renk kutuları */
+.color-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  border: 1.5px solid #ccc;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.beyaz { background-color: #fff; border: 1.5px solid #aaa; }
+.siyah { background-color: #000; }
+.sari { background-color: #f1c40f; }
+.kirmizi { background-color: #e74c3c; }
+.mavi { background-color: #3498db; }
+.yesil { background-color: #2ecc71; }
+.turuncu { background-color: #e67e22; }
+.gri { background-color: #7f8c8d; }
+.fume { background-color: #606060; }
+
+.img-radio img {
+  width: 100px;      /* İkon genişliği */
+  height: 100px;     /* İkon yüksekliği */
+  object-fit: contain;
+  margin-bottom: 6px;
+  pointer-events: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+/* Grafik satırını genişlet ve responsive yap */
+
+.chart-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+.chart-box {
+  flex: 1 1 30%;
+  max-width: 32%;
+  min-width: 280px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.table-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  overflow-x: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 16px;
+}
+
+table th, table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background: #f9f9f9;
+  color: #333;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+#result-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #2c3e50;
+}
+.kategori-model {
+  background-color: #e3f2fd; /* açık mavi */
+}
+
+.kategori-renk {
+  background-color: #f1f8e9; /* açık yeşil */
+}
+
+.kategori-pantolon {
+  background-color: #fff8e1; /* açık sarı */
+}
+
+.kategori-model:hover,
+.kategori-renk:hover,
+.kategori-pantolon:hover {
+  background-color: #dfe9ff; /* hover efekti daha belirgin */
+}
+
