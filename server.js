@@ -45,7 +45,7 @@ app.get("/api/sonuclar", async (req, res) => {
   res.json({ model, renk, pantolon });
 });
 
-app.get("/api/excel", async (req, res) => {
+/* app.get("/api/excel", async (req, res) => {
   const oylar = await Oy.find();
   const workbook = new ExcelJS.Workbook();
   const sheet = workbook.addWorksheet("Oylar");
@@ -59,7 +59,7 @@ app.get("/api/excel", async (req, res) => {
   res.setHeader("Content-Disposition", "attachment; filename=oylar.xlsx");
   await workbook.xlsx.write(res);
   res.end();
-});
+});*/
 
 // Statik dosyaları sunuyoruz
 app.use(express.static(path.join(__dirname)));
