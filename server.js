@@ -50,7 +50,6 @@ app.get("/api/excel", async (req, res) => {
   const workbook = new ExcelJS.Workbook();
   const sheet = workbook.addWorksheet("Oylar");
   sheet.columns = [
-    { header: "TC", key: "tc", width: 20 },
     { header: "Model", key: "model", width: 20 },
     { header: "Renk", key: "renk", width: 20 },
     { header: "Pantolon", key: "pantolon", width: 20 }
