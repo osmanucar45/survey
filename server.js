@@ -1,8 +1,8 @@
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const ExcelJS = require("exceljs");
+const path = require("path");
 
 const app = express();
 app.use(cors());
@@ -62,7 +62,15 @@ app.get("/api/excel", async (req, res) => {
   res.end();
 });
 
-const PORT = 3000;
+// Statik dosyaları sunuyoruz
+app.use(express.static(path.join(__dirname)));
+
+// Ana sayfa isteğinde index.html döndür
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Server çalışıyor: http://localhost:${PORT}`);
 });
