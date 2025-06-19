@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginBtn = document.getElementById("login-btn");
   const adminLoginBtn = document.getElementById("admin-login-btn");
   const submitBtn = document.getElementById("submit-btn");
-  const downloadExcelBtn = document.getElementById("download-excel");
+  //const downloadExcelBtn = document.getElementById("download-excel");
 
   let girisYapanTc = "";
   let adminGiris = false;
